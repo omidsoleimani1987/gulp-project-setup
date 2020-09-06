@@ -1,0 +1,94 @@
+/*-------------------------------
+------- landing image section
+-------------------------------*/
+// animation classes:
+.fade-in {
+  animation: fade-in 0.8s ease-in;
+}
+
+.move-text {
+  animation: move-text 0.5s 0.9s ease-in forwards;
+}
+
+// normal classes:
+.slideshow {
+  position: relative;
+  height: 60vh;
+  font-family: inherit;
+  background-image: url('../images/01-slideshow.jpg');
+  background-size: cover;
+  background-position: 70% 0%;
+  transition: background-image 0.4s linear;
+
+  // arrival-text div
+  .arrivals {
+    position: absolute;
+    left: 8%;
+    top: 15%;
+
+    .underline {
+      height: 2px;
+      background-color: #000000;
+      margin-top: 0.375rem;
+      animation: underline 1s 0.8s linear forwards;
+    }
+  }
+
+  // collection-text div
+  .big-text {
+    border-left: 4px solid map-get($colors, main-orange);
+    padding-left: 0.4375rem;
+    position: absolute;
+    left: 8%;
+    top: 50%;
+
+    p {
+      font-size: 2.1875rem;
+    }
+  }
+
+  // tablet size style
+  @media screen and (min-width: 480px) {
+    height: calc(100vh - 5rem);
+    background-position: center;
+
+    .big-text p {
+      font-size: 3.125rem;
+    }
+  }
+
+  // desktop size style
+  @media screen and (min-width: 1024px) {
+    height: calc(100vh - 5rem);
+  }
+}
+
+/*-------------------------------
+------- animations
+-------------------------------*/
+@keyframes underline {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 40%;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0.4;
+    transform: scale(1.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes move-text {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(60px);
+  }
+}
